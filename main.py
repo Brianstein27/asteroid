@@ -33,6 +33,10 @@ def main():
         for thing in drawable:
             thing.draw(screen)
 
+        for asteroid in asteroids:
+            if asteroid.collide(player):
+                return
+
         pygame.display.flip()
 
         dt = game_clock.tick(60) / 1000
